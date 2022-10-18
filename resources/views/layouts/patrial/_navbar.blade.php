@@ -23,8 +23,8 @@
         <!--end::Aside mobile toggle-->
         <!--begin::Mobile logo-->
         <div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-            <a href="../../demo1/dist/index.html" class="d-lg-none">
-                <img alt="Logo" src="assets/media/logos/logo-2.svg" class="h-30px" />
+            <a href="/dashboard" class="d-lg-none">
+                <img alt="Logo" src="assets/media/logos/logo-gray.png" class="h-30px" />
             </a>
         </div>
         <!--end::Mobile logo-->
@@ -35,10 +35,10 @@
                 <!--begin::Menu wrapper-->
                 <div class="header-menu align-items-stretch" data-kt-drawer="true"
                     data-kt-drawer-name="header-menu">
-                    <a href="../../demo1/dist/index.html">
+                    {{-- <a href="../../demo1/dist/index.html">
                         <img alt="Logo" src="assets/media/logos/logo-1-dark.svg"
                             class="h-25px logo" />
-                    </a>
+                    </a> --}}
                 </div>
                 <!--end::Menu wrapper-->
             </div>
@@ -364,7 +364,7 @@
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-                                <a href="../../demo1/dist/authentication/flows/basic/sign-in.html"
+                                <a href="/logout"
                                     class="menu-link px-5">Sign Out</a>
                             </div>
                             <!--end::Menu item-->

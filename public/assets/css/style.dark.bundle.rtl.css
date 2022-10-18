@@ -47253,7 +47253,7 @@ body {
 .aside-dark .menu .menu-item.hover > .menu-link:not(.disabled):not(.active),
 .aside-dark .menu .menu-item .menu-link:hover:not(.disabled):not(.active) {
   transition: color 0.2s ease, background-color 0.2s ease;
-  background-color: #1b1b28;
+  background-color: #ffa800;
   color: #ffffff;
 }
 .aside-dark .menu .menu-item.hover > .menu-link:not(.disabled):not(.active) .menu-title,
@@ -47286,7 +47286,7 @@ body {
 }
 .aside-dark .menu .menu-item.here > .menu-link, .aside-dark .menu .menu-item.show > .menu-link {
   transition: color 0.2s ease, background-color 0.2s ease;
-  background-color: #1b1b28;
+  background-color: #ffa800;
   color: #ffffff;
 }
 .aside-dark .menu .menu-item.here > .menu-link .menu-title, .aside-dark .menu .menu-item.show > .menu-link .menu-title {
@@ -47313,7 +47313,7 @@ body {
 }
 .aside-dark .menu .menu-item .menu-link.active {
   transition: color 0.2s ease, background-color 0.2s ease;
-  background-color: #1b1b28;
+  background-color: #ffa800;
   color: #ffffff;
 }
 .aside-dark .menu .menu-item .menu-link.active .menu-title {
@@ -47360,7 +47360,7 @@ body {
   }
 }
 .footer {
-  background-color: #1B1B28;
+  background-color: #ffa800;
 }
 
 @media print {
