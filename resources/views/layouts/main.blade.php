@@ -107,9 +107,12 @@
     <!--begin::JS script-->
     @yield('js-script')
     <!--end::JS script-->
+    
 </body>
 <!--end::Body-->
 
 </html>
 
+<!--begin::sweet alert-->
 @include('sweetalert::alert')
+<!--end::sweet alert-->

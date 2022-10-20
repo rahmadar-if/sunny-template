@@ -2,8 +2,6 @@
 
 @section('title', 'Dashboard')
 
-{{-- <link rel="stylesheet" href="https://code.highcharts.com/css/highcharts.css" /> --}}
-
 <style>
     .chart-outer {
     display: flex;

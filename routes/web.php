@@ -29,6 +29,7 @@ Route::post('/login', function (Request $request) {
     if (Auth::attempt($credentials)) {
         // dd($credentials);
         $request->session()->regenerate();
+        Alert::toast('Login Success','success')->autoClose(2500);
         return redirect()->intended("/dashboard");
     }
     // dd(Auth::attempt($credentials), Auth::check());
@@ -37,9 +38,9 @@ Route::post('/login', function (Request $request) {
 });
 
 Route::get('/logout', function (Request $request) {
-        auth()->user()->forceFill([
-            "remember_token" => null,
-        ])->save();
+        // auth()->user()->forceFill([
+        //     "remember_token" => null,
+        // ])->save();
 
         Auth::logout();
 

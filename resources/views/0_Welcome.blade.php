@@ -193,12 +193,17 @@
         </script>
 
         
-                    <script src="https://sunny-crm.bpmonline.asia/plugins/global/plugins.bundle.js" type="text/javascript"></script>
-		            <script src="https://sunny-crm.bpmonline.asia/plugins/custom/prismjs/prismjs.bundle.js" type="text/javascript"></script>
-		            <script src="https://sunny-crm.bpmonline.asia/js/scripts.bundle.js" type="text/javascript"></script>
-		            <script src="https://sunny-crm.bpmonline.asia/js/app.js" type="text/javascript"></script>
+        <script src="https://sunny-crm.bpmonline.asia/plugins/global/plugins.bundle.js" type="text/javascript"></script>
+        <script src="https://sunny-crm.bpmonline.asia/plugins/custom/prismjs/prismjs.bundle.js" type="text/javascript"></script>
+        <script src="https://sunny-crm.bpmonline.asia/js/scripts.bundle.js" type="text/javascript"></script>
+        <script src="https://sunny-crm.bpmonline.asia/js/app.js" type="text/javascript"></script>
 				
 		<script type="module" src="https://sunny-crm.bpmonline.asia/js/app/auth/login.js"></script>
         
     </body>
 </html>
+
+
+<!--begin::sweet alert-->
+@include('sweetalert::alert')
+<!--end::sweet alert-->
