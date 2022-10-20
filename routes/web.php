@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,7 +32,7 @@ Route::post('/login', function (Request $request) {
         return redirect()->intended("/dashboard");
     }
     // dd(Auth::attempt($credentials), Auth::check());
-    // Alert::error("Login Gagal", "Pastikan Email dan Password Benar");
+    Alert::error("Login Gagal", "Pastikan Email dan Password Benar");
     return back();
 });
 
@@ -60,6 +61,10 @@ Route::get('/logout', function (Request $request) {
 
 Route::get('/dashboard', function () {
     return view('1_dashboard');
+});
+
+Route::get('/metronic', function () {
+    return view('dashboard');
 });
 
 Route::get('/account', function () {

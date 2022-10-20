@@ -19,8 +19,6 @@
         content="Metronic - Bootstrap 5 HTML, VueJS, React, Angular &amp; Laravel Admin Dashboard Theme" />
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="Keenthemes | Metronic" /> --}}
-    {{-- <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" /> --}}
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -105,7 +103,13 @@
     <script src="assets/js/custom/modals/upgrade-plan.js"></script>
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
+
+    <!--begin::JS script-->
+    @yield('js-script')
+    <!--end::JS script-->
 </body>
 <!--end::Body-->
 
 </html>
+
+@include('sweetalert::alert')

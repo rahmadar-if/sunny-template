@@ -188,7 +188,7 @@
                         </div> --}}
                     <!--end::Chat-->
                     <!--begin::Quick links-->
-                    <div class="d-flex align-items-center ms-1 ms-lg-3">
+                    {{-- <div class="d-flex align-items-center ms-1 ms-lg-3">
                         <!--begin::Menu wrapper-->
                         <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
                             data-kt-menu-trigger="click" data-kt-menu-attach="parent"
@@ -342,11 +342,14 @@
                         </div>
                         <!--end::Menu-->
                         <!--end::Menu wrapper-->
-                    </div>
+                    </div> --}}
                     <!--end::Quick links-->
                     <!--begin::User-->
                     <div class="d-flex align-items-center ms-1 ms-lg-3"
                         id="kt_header_user_menu_toggle">
+                        <div class="symbol symbol-30px symbol-md-40px pe-4">
+                            Hi,<strong> {{ auth()->user()->name }}</strong>
+                        </div>
                         <!--begin::Menu wrapper-->
                         <div class="cursor-pointer symbol symbol-30px symbol-md-40px"
                             data-kt-menu-trigger="click" data-kt-menu-attach="parent"
