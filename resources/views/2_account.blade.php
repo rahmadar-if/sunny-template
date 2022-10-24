@@ -138,7 +138,7 @@
                 <!--end::Wrapper-->
                 <!--begin::Button-->
                 <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#kt_modal_create_app" id="kt_toolbar_primary_button">Create</a>
+                    data-bs-target="#exampleModal" id="kt_toolbar_primary_button">Create</a>
                 <!--end::Button-->
             </div>
             <!--end::Actions-->
@@ -149,16 +149,176 @@
     <!--begin::Post-->
     <div class="card mx-6" Id="List-vv" style="position: relative; overflow: hidden;">
         <!--begin::Card header-->
-        <div class="card-header py-1">
-        </div>
+        {{-- <div class="card-header py-5">
+            <h1>Account</h1>
+        </div> --}}
         <!--end::Card header-->
         <!--begin::Card body-->
-        <div class="card-body pt-0">
+        <div class="card-body pt-6">
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead >
+                    <tr>
+                        <th style="text-align: center">No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Alamat</th>
+                        <th>No. Hp</th>
+                        <th>Created On</th>
+                        <th>Modified On</th>
+                        <th style="text-align: center">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @php
+                        $no=1;
+                    @endphp
+                    @foreach ($user as $item)
+                        <tr>
+                            <td style="text-align:center">{{ $no++ }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->email }}</td>
+                            <td>Jl. ABC, Jakarta Selatan</td>
+                            <td>0812345678901</td>
+                            <td>{{ $item->created_at }}</td>
+                            <td>{{ $item->updated_at }}</td>
+                            <td>
+                                <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#modaledit{{ $item->id }}"><i class="bi bi-pencil-square"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#modaldelete{{ $item->id }}"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                    @endforeach
+                   
+
+        
+                </tbody>
+                
+            </table>
         </div>
+       
         <!--end::Card body-->
     </div>
     <!--end::Post-->
 </div>
 
+{{-- begin::modal add user--}}
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Account</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/account/new" method="post">
+            @csrf
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" id="name" placeholder="name" aria-label="default input example">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" aria-label="default input example">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="password" aria-label="default input example">
+            </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save</button>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+</form>
+{{-- end::modal add user--}}
 
+{{-- begin::modal edit user--}}
+@foreach ($user as $item)
+    
+<div class="modal fade" id="modaledit{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Account</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/account/update" method="post">
+            @csrf
+                <!--begin:: id_customer selected-->
+                <input type="hidden" name="id" value="{{ $item->id }}" id="id">
+                <!--end:: id_customerid-->
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" value="{{ $item->name }}" name="name" class="form-control" id="name" placeholder="name" aria-label="default input example">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" value="{{ $item->email }}" name="email" class="form-control" id="email" placeholder="name@example.com" aria-label="default input example">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="password" aria-label="default input example">
+            </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save</button>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+</form>
+@endforeach
+{{-- end::modal edit user --}}
+
+{{-- begin::modal delete user--}}
+@foreach ($user as $item)
+<form action="/account/delete/{{ $item->id }}" method="post">
+    @method('delete')
+    @csrf    
+<div class="modal fade" id="modaldelete{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Account</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h2>Hapus Account {{ $item->name }}</h2>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+</form>
+@endforeach
+{{-- end::modal edit user --}}
+
+@endsection
+
+@section('js-script')
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+<script>
+    
+        $(document).ready(function () {
+            $('#example').DataTable();
+        });
+
+</script>
 @endsection

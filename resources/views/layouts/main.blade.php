@@ -35,6 +35,11 @@
         }
 
     </style>
+
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"> --}}
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+
+
 </head>
 <!--end::Head-->
 <!--begin::Body-->
@@ -107,6 +112,9 @@
     <!--begin::JS script-->
     @yield('js-script')
     <!--end::JS script-->
+
+   
+
     
 </body>
 <!--end::Body-->

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -68,6 +69,14 @@ Route::get('/metronic', function () {
     return view('dashboard');
 });
 
-Route::get('/account', function () {
-    return view('2_account');
-});
+// Route::get('/account', function () {
+//     return view('2_account');
+// });
+
+Route::resource('/account', UserController::class);
+
+Route::post('/account/new',  [UserController::class, 'create']);
+
+Route::post('/account/update',  [UserController::class, 'update']);
+
+Route::delete('/account/delete/{id}',  [UserController::class, 'delete']);
