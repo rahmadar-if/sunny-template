@@ -1,9 +1,18 @@
 
+@php
+    if (isset($cookie) && isset($active)) {
+        $sideColor = $cookie;
+        $activeColor = $active;
+        // dump(cookie('color'));
+    } else {
+        $sideColor = "#535353";
+    }
+@endphp
 
 <!--begin::Aside-->
-<div style="background-color: #535353" id="kt_aside" class="aside aside-dark"   data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
+<div style="background-color: {{$sideColor}}" id="kt_aside" class="aside aside-dark"   data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
     <!--begin::Brand-->
-    <div style="background-color: #535353" class="aside-logo flex-column-auto" id="kt_aside_logo">
+    <div style="background-color: {{$sideColor}}" class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
         <a href="/dashboard">
             <img alt="Logo" src="assets/media/logos/logo.png" class="h-50px logo" />
@@ -35,8 +44,9 @@
                         {{-- <span class="menu-section text-muted text-uppercase fs-8 ls-1">Dashboard</span> --}}
                     </div>
                 </div>
+                <!--begin:Menu item-->
                 <div class="menu-item">
-                    <a class="menu-link {{ str_contains(Request::Path(), 'dashboard') ? 'active' : '' }}" href="/dashboard">
+                    <a class="menu-link {{ str_contains(Request::Path(), 'dashboard') ? 'active' : '' }} {{ str_contains(Request::Path(), 'sidasi') ? 'active' : '' }}" href="/dashboard">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon-2">
@@ -52,6 +62,9 @@
                         <span style="font-size: 16px" class="menu-title">Dashboard</span>
                     </a>
                 </div>
+                <!--end:Menu item-->
+                @if (str_contains(auth()->user()->name, 'admin'))
+                <!--begin:Menu item-->
                 <div class="menu-item">
                     <a class="menu-link {{ str_contains(Request::Path(), 'account') ? 'active' : '' }}" href="/account">
                         <span class="menu-icon" style="font-size: 16px">
@@ -67,6 +80,9 @@
                         <span  style="font-size: 16px" class="menu-title">Account</span>
                     </a>
                 </div>
+                <!--end:Menu item-->
+                @endif
+                <!--begin:Menu item-->
                 {{-- <div class="menu-item">
                     <a class="menu-link" href="#">
                         <span class="menu-icon">
@@ -82,6 +98,8 @@
                         <span class="menu-title">Customers</span>
                     </a>
                 </div> --}}
+                <!--end:Menu item-->
+                <!--begin:Menu item-->
                 <div class="menu-item">
                     <a class="menu-link" href="#">
                         <span class="menu-icon">
@@ -97,6 +115,26 @@
                         <span class="menu-title">User Management</span>
                     </a>
                 </div>
+                <!--end:Menu item-->
+                <!--begin:Menu item-->
+                <div class="menu-item">
+                    <!--begin:Menu link-->
+                    <a class="menu-link {{ str_contains(Request::Path(), 'setting') ? 'active' : '' }}" style="background-color:{{ $activeColor ?? ""}}"  href="/setting">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/abstract/abs014.svg-->
+                            <span class="svg-icon-2">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.3" d="M11.8 5.2L17.7 8.6V15.4L11.8 18.8L5.90001 15.4V8.6L11.8 5.2ZM11.8 2C11.5 2 11.2 2.1 11 2.2L3.8 6.4C3.3 6.7 3 7.3 3 7.9V16.2C3 16.8 3.3 17.4 3.8 17.7L11 21.9C11.3 22 11.5 22.1 11.8 22.1C12.1 22.1 12.4 22 12.6 21.9L19.8 17.7C20.3 17.4 20.6 16.8 20.6 16.2V7.9C20.6 7.3 20.3 6.7 19.8 6.4L12.6 2.2C12.4 2.1 12.1 2 11.8 2Z" fill="white" />
+                                    <path d="M11.8 8.69995L8.90001 10.3V13.7L11.8 15.3L14.7 13.7V10.3L11.8 8.69995Z" fill="white" />
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Layout Builder</span>
+                    </a>
+                    <!--end:Menu link-->
+                </div>
+                <!--end:Menu item-->
             </div>
             <!--end::Menu-->
         </div>

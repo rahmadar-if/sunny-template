@@ -5,133 +5,37 @@
     <!--begin::Body Dashboard-->
     <div id="dashboard-body" class="mt-3">
 
-        <!--begin::Card Status-->
+        <!--begin::Card Diagram 2 Column-->
         <div class="row mx-3">
             <!--begin::Card column-->
-            <div class="col-4">
+            <div class="col-12">
                 <!--begin::Card body-->
                 <div class="card-body pt-0">
-                    <!--begin::Card widget 20-->
-                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: #017EB8;background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
-                        <!--begin::Header-->
-                        <div class="card-header pt-5">
-                            <!--begin::Title-->
-                            <div class="card-title d-flex flex-column">
-                                <!--begin::Amount-->
-                                <span class="fs-2hx fw-bold text-white me-2 lh-1 ls-n2">69</span>
-                                <!--end::Amount-->
-                                <!--begin::Subtitle-->
-                                <span class="text-white opacity-75 pt-1 fw-semibold fs-6">Active Projects</span>
-                                <!--end::Subtitle-->
-                            </div>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Header-->
-                        <!--begin::Card body-->
-                        <div class="card-body d-flex align-items-end pt-0">
-                            <!--begin::Progress-->
-                            <div class="d-flex align-items-center flex-column mt-3 w-100">
-                                <div class="d-flex justify-content-between fw-bold fs-6 text-white opacity-75 w-100 mt-auto mb-2">
-                                    <span>43 Pending</span>
-                                    <span>72%</span>
-                                </div>
-                                <div class="h-8px mx-3 w-100 bg-white bg-opacity-50 rounded">
-                                    <div class="bg-white rounded h-8px" role="progressbar" style="width: 72%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <!--end::Progress-->
-                        </div>
-                        <!--end::Card body-->
-                    </div>
-                    <!--end::Card widget 20-->
+                    <!--begin::COLUMN CHART-->
+                    <div id="stack-chart"></div>
+                    <!-- data table is inserted here -->
+                    <!--end::COLUMN CHART-->
                 </div>
                 <!--end::Card body-->
             </div>
             <!--end-begin::Card column-->
-            <div class="col-4">
+            {{-- <div class="col-6">
                 <!--begin::Card body-->
                 <div class="card-body pt-0">
-                    <!--begin::Card widget 20-->
-                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: #28B3AC;background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
-                        <!--begin::Header-->
-                        <div class="card-header pt-5">
-                            <!--begin::Title-->
-                            <div class="card-title d-flex flex-column">
-                                <!--begin::Amount-->
-                                <span class="fs-2hx fw-bold text-white me-2 lh-1 ls-n2">35</span>
-                                <!--end::Amount-->
-                                <!--begin::Subtitle-->
-                                <span class="text-white opacity-75 pt-1 fw-semibold fs-6">Active Projects</span>
-                                <!--end::Subtitle-->
-                            </div>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Header-->
-                        <!--begin::Card body-->
-                        <div class="card-body d-flex align-items-end pt-0">
-                            <!--begin::Progress-->
-                            <div class="d-flex align-items-center flex-column mt-3 w-100">
-                                <div class="d-flex justify-content-between fw-bold fs-6 text-white opacity-75 w-100 mt-auto mb-2">
-                                    <span>60 Pending</span>
-                                    <span>35%</span>
-                                </div>
-                                <div class="h-8px mx-3 w-100 bg-white bg-opacity-50 rounded">
-                                    <div class="bg-white rounded h-8px" role="progressbar" style="width: 35%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <!--end::Progress-->
-                        </div>
-                        <!--end::Card body-->
-                    </div>
-                    <!--end::Card widget 20-->
+                    <!--begin::PIE CHART-->
+                    <figure class="highcharts-figure">
+                        <div id="col-chart-2"></div>
+                        <!-- data table is inserted here -->
+                    </figure>
+                    <!--end::PIE CHART-->
                 </div>
                 <!--end::Card body-->
-            </div>
-            <!--end-begin::Card column-->
-            <div class="col-4">
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <!--begin::Card widget 20-->
-                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: #F7AD1A;background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
-                        <!--begin::Header-->
-                        <div class="card-header pt-5">
-                            <!--begin::Title-->
-                            <div class="card-title d-flex flex-column">
-                                <!--begin::Amount-->
-                                <span class="fs-2hx fw-bold text-white me-2 lh-1 ls-n2">80</span>
-                                <!--end::Amount-->
-                                <!--begin::Subtitle-->
-                                <span class="text-white opacity-75 pt-1 fw-semibold fs-6">Active Projects</span>
-                                <!--end::Subtitle-->
-                            </div>
-                            <!--end::Title-->
-                        </div>
-                        <!--end::Header-->
-                        <!--begin::Card body-->
-                        <div class="card-body d-flex align-items-end pt-0">
-                            <!--begin::Progress-->
-                            <div class="d-flex align-items-center flex-column mt-3 w-100">
-                                <div class="d-flex justify-content-between fw-bold fs-6 text-white opacity-75 w-100 mt-auto mb-2">
-                                    <span>12 Pending</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="h-8px mx-3 w-100 bg-white bg-opacity-50 rounded">
-                                    <div class="bg-white rounded h-8px" role="progressbar" style="width: 80%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </div>
-                            <!--end::Progress-->
-                        </div>
-                        <!--end::Card body-->
-                    </div>
-                    <!--end::Card widget 20-->
-                </div>
-                <!--end::Card body-->
-            </div>
+            </div> --}}
             <!--end::Card column-->
         </div>
-        <!--end::Card Status-->
+        <!--end::Card Diagram 2 Column-->
 
-        <!--begin::Card Diagram Column dan Donut-->
+        <!--begin::Card Diagram 2 Column-->
         <div class="row mx-3">
             <!--begin::Card column-->
             <div class="col-6">
@@ -150,7 +54,7 @@
                 <div class="card-body pt-0">
                     <!--begin::PIE CHART-->
                     <figure class="highcharts-figure">
-                        <div id="donut-chart"></div>
+                        <div id="column-chart-2"></div>
                         <!-- data table is inserted here -->
                     </figure>
                     <!--end::PIE CHART-->
@@ -159,58 +63,7 @@
             </div>
             <!--end::Card column-->
         </div>
-        <!--end::Card Diagram Column dan Donut-->
-
-        <!--begin::Card Diagram Pie dan Stack-->
-        <div class="row mx-3">
-            <!--begin::Card column-->
-            <div class="col-6">
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <!--begin::PIE CHART-->
-                    <div id="pie-chart"></div>
-                    <!-- data table is inserted here -->
-                    <!--end::PIE CHART-->
-                </div>
-                <!--end::Card body-->
-            </div>
-            <!--end-begin::Card column-->
-            <div class="col-6">
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <!--begin::STack CHART-->
-                    <figure class="highcharts-figure">
-                        <div id="stack-chart"></div>
-                        <!-- data table is inserted here -->
-                    </figure>
-                    <!--end::STack CHART-->
-                </div>
-                <!--end::Card body-->
-            </div>
-            <!--end::Card column-->
-        </div>
-        <!--end::Card Diagram Pie dan Stack-->
-
-        <!--begin::Card Line col-12-->
-        <div class="row mx-3">
-            <!--begin::Card column-->
-            <div class="col-12">
-                <!--begin::Card body-->
-                <div class="card-body pt-0">
-                    <!--begin::LINE CHART-->
-                    <figure class="highcharts-figure">
-                        <div class="chart-outer" id="table-line">
-                            <div id="chart-line" style="width: 70%; padding-right: 10px; overflow: unset;"></div>
-                            <!-- data table is inserted here -->
-                        </div>
-                    </figure>
-                    <!--end::LINE CHART-->
-                </div>
-                <!--end::Card body-->
-            </div>
-            <!--end::Card column-->
-        </div>
-        <!--end::Card Line col-12-->
+        <!--end::Card Diagram 2 Column-->
 
         <!--begin::Card Table-->
         <div class="row mx-6">
@@ -222,7 +75,7 @@
                     <div class="card-header pt-7">
                         <!--begin::Title-->
                         <h3 class="card-title align-items-start flex-column">
-                            <span class="card-label fw-bold text-gray-800">My Sales in Details</span>
+                            <span class="card-label fw-bold text-gray-800">Peminjaman Ruangan, Peminjaman BMN, Jumlah BMN Rusak</span>
                             <span class="text-gray-400 mt-1 fw-semibold fs-6">Avg. 57 orders per day</span>
                         </h3>
                         <!--end::Title-->
@@ -306,7 +159,7 @@
                                     <td colspan="2">
                                         <div class="d-flex align-items-center gap-3">
                                             <a href="#" class="symbol symbol-50px bg-secondary bg-opacity-25 rounded">
-                                                <img src="" data-kt-src-path="/assets/media/stock/ecommerce/" alt="" data-kt-table-widget-4="template_image" />
+                                                <img src="" data-kt-src-path="/metronic8/demo1/assets/media/stock/ecommerce/" alt="" data-kt-table-widget-4="template_image" />
                                             </a>
                                             <div class="d-flex flex-column text-muted">
                                                 <a href="#" class="text-gray-800 text-hover-primary fw-bold" data-kt-table-widget-4="template_name">Product name</a>
@@ -334,7 +187,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#XGY-346</a>
+                                        <a href="/metronic8/demo1/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#XGY-346</a>
                                     </td>
                                     <td class="text-end">7 min ago</td>
                                     <td class="text-end">
@@ -369,7 +222,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#YHD-047</a>
+                                        <a href="/metronic8/demo1/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#YHD-047</a>
                                     </td>
                                     <td class="text-end">52 min ago</td>
                                     <td class="text-end">
@@ -404,7 +257,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#SRR-678</a>
+                                        <a href="/metronic8/demo1/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#SRR-678</a>
                                     </td>
                                     <td class="text-end">1 hour ago</td>
                                     <td class="text-end">
@@ -439,7 +292,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#PXF-534</a>
+                                        <a href="/metronic8/demo1/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#PXF-534</a>
                                     </td>
                                     <td class="text-end">3 hour ago</td>
                                     <td class="text-end">
@@ -474,7 +327,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#XGD-249</a>
+                                        <a href="/metronic8/demo1/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#XGD-249</a>
                                     </td>
                                     <td class="text-end">2 day ago</td>
                                     <td class="text-end">
@@ -509,7 +362,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#SKP-035</a>
+                                        <a href="/metronic8/demo1/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#SKP-035</a>
                                     </td>
                                     <td class="text-end">2 day ago</td>
                                     <td class="text-end">
@@ -544,7 +397,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#SKP-567</a>
+                                        <a href="/metronic8/demo1/../demo1/apps/ecommerce/catalog/edit-product.html" class="text-gray-800 text-hover-primary">#SKP-567</a>
                                     </td>
                                     <td class="text-end">7 min ago</td>
                                     <td class="text-end">
@@ -596,221 +449,6 @@
 @endsection
 
 @section('js-script')
-    <!--begin::Highchart Column-->
-    <script>
-        Highcharts.chart('column-chart', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: 'Sunny Column Chart',
-                style: {
-                    fontWeight: 'bold',
-                    fontSize: '25px'
-                }
-            },
-            subtitle: {
-                // text: 'Source: '
-            },
-            xAxis: {
-                categories: [
-                    '2019',
-                    '2020',
-                    '2021',
-                    '2022'
-                ],
-                crosshair: true,
-                // visible: false,
-            },
-            yAxis: {
-                title: {
-                    useHTML: true,
-                    text: ''
-                }
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size:15px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>&nbsp;{point.y:.1f}</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.1,
-                    borderWidth: 0,
-                    // borderRadius: 5,
-                    borderRadiusTopLeft: 5,
-                    borderRadiusTopRight: 5,
-                    showInLegend: true
-                }
-            },
-            legend: {
-                layout: 'horizontal',
-                align: 'center',
-                verticalAlign: 'bottom',
-                format : '<b>{point.key}</b><br>',
-                itemStyle: {
-                    fontSize:'15px',
-                },
-            },
-            credits: {
-                enabled: false
-            },
-            exporting: {
-                showTable: true,
-                allowHTML: true
-            },
-            series: [{
-                name: 'Input',
-                data: [11.5, 13.9, 12.6, 14]
-
-            }, {
-                name: 'Output',
-                data: [5.8, 8.3, 6.32, 9.3]
-
-            }]
-        });
-    </script>
-    <!--end::Highchart Column-->
-
-    <!--begin::Highchart Donut-->
-    <script>
-        Highcharts.chart('donut-chart', {
-            chart: {
-                type: 'pie',
-                options3d: {
-                    enabled: true,
-                    alpha: 5
-                }
-            },
-            title: {
-                text: 'Sunny Donut Chart',
-                style: {
-                    fontWeight: 'bold',
-                    fontSize: '25px'
-                }
-            },
-            subtitle: {
-                // text: '3D donut in Highcharts'
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size:15px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>&nbsp;{point.y:.1f}</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
-            },
-            plotOptions: {
-                pie: {
-                    innerSize: 150,
-                    depth: 5,
-                    showInLegend: true,
-                    dataLabels: {
-                        enabled: false
-                    }
-                }
-            },
-            legend: {
-                layout: 'horizontal',
-                align: 'center',
-                verticalAlign: 'bottom',
-                format : '<b>{point.key}</b><br>',
-                itemStyle: {
-                    fontSize:'15px',
-                },
-            },
-            credits: {
-                enabled: false
-            },
-            exporting: {
-                showTable: true,
-                allowHTML: true
-            },
-            series: [{
-                name: 'Medals',
-                data: [
-                    ['2019', 8],
-                    ['2020', 16],
-                    ['2021', 12],
-                    ['2022', 8],
-                    ['Others', 4]
-                ]
-            }]
-        });
-    </script>
-    <!--end::Highchart Donut-->
-
-    <!--begin::Highchart Pie-->
-    <script>
-        Highcharts.chart('pie-chart', {
-            chart: {
-                type: 'pie',
-                options3d: {
-                    enabled: true,
-                    alpha: 5
-                }
-            },
-            title: {
-                text: 'Sunny Pie Chart',
-                style: {
-                    fontWeight: 'bold',
-                    fontSize: '25px'
-                }
-            },
-            subtitle: {
-                // text: '3D donut in Highcharts'
-            },
-            tooltip: {
-                headerFormat: '<span style="font-size:15px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>&nbsp;{point.y:.1f}</b></td></tr>',
-                footerFormat: '</table>',
-                shared: true,
-                useHTML: true
-            },
-            plotOptions: {
-                pie: {
-                    innerSize: 0,
-                    depth: 5,
-                    showInLegend: true,
-                    dataLabels: {
-                        enabled: false
-                    }
-                }
-            },
-            legend: {
-                layout: 'horizontal',
-                align: 'left',
-                verticalAlign: 'middle',
-                format : '<b>{point.key}</b><br>',
-                itemStyle: {
-                    fontSize:'15px',
-                },
-            },
-            credits: {
-                enabled: false
-            },
-            exporting: {
-                showTable: true,
-                allowHTML: true
-            },
-            series: [{
-                name: 'Medals',
-                data: [
-                    ['2019', 9],
-                    ['2020', 11],
-                    ['2021', 13],
-                    ['2022', 16],
-                    ['Others', 5]
-                ]
-            }]
-        });
-    </script>
-    <!--end::Highchart Pie-->
-
     <!--begin::Highchart Stack-->
     <script>
         Highcharts.chart('stack-chart', {
@@ -818,14 +456,14 @@
                 type: 'column'
             },
             title: {
-                text: 'Sunny Stack Chart',
+                text: 'Jumlah Pengadaan Tiap Tahun',
                 style: {
                     fontWeight: 'bold',
                     fontSize: '25px'
                 }
             },
             xAxis: {
-                categories: ['2019', '2020', '2021', '2022']
+                categories: ['Rumah Tangga', 'Sarana dan Prasarana', 'Lainnya']
             },
             yAxis: {
                 min: 0,
@@ -879,69 +517,77 @@
                 allowHTML: true
             },
             series: [{
-                name: 'Piutang',
-                data: [3, 5, 1, 6]
+                name: 'Selesai',
+                data: [3, 5, 6]
             }, {
-                name: 'Laba',
-                data: [11, 8, 8, 12]
+                name: 'Proses',
+                data: [11, 8, 12]
             }, {
-                name: 'Rugi',
-                data: [1, 2, 6, 3]
+                name: 'Tunda',
+                data: [4, 2, 3]
             }]
         });
     </script>
     <!--begin::Highchart Stack-->
 
-
-    <!--begin::Highchart Line-->
+    <!--begin::Highchart Column-->
     <script>
-        Highcharts.chart('chart-line', {
+        Highcharts.chart('column-chart', {
+            chart: {
+                type: 'column'
+            },
             title: {
-                text: 'Sunny Line Chart',
+                text: 'Layanan Rumah Tangga',
                 style: {
                     fontWeight: 'bold',
                     fontSize: '25px'
                 }
             },
-
             subtitle: {
-                // text: ''
+                // text: 'Source: '
             },
-
+            xAxis: {
+                categories: [
+                    'Berhasil',
+                    'On-Going'
+                ],
+                crosshair: true,
+                // visible: false,
+            },
             yAxis: {
                 title: {
+                    useHTML: true,
                     text: ''
                 }
             },
-
-            xAxis: {
-                accessibility: {
-                    // rangeDescription: 'Range: 2010 to 2020'
-                },
-                categories: [
-                        "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September",
-                        "Oktober", "November", "Desember",
-                    ],
-            },
-
             tooltip: {
                 headerFormat: '<span style="font-size:15px">{point.key}</span><table>',
-                pointFormat: '<tr><td style="padding:0">{series.name}: </td>' +
-                    '<td style="padding:0"><b>&nbsp;{point.y:.0f}</b></td></tr>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>&nbsp;{point.y:.1f}</b></td></tr>',
                 footerFormat: '</table>',
-                // shared: true,
+                shared: true,
                 useHTML: true
             },
-            
             plotOptions: {
-                series: {
-                    label: {
-                        connectorAllowed: false
-                    },
-                    // pointStart: 1
+                column: {
+                    pointPadding: 0.1,
+                    borderWidth: 0,
+                    // borderRadius: 5,
+                    borderRadiusTopLeft: 5,
+                    borderRadiusTopRight: 5,
+                    showInLegend: true
                 }
             },
-
+            legend: {
+                layout: 'horizontal',
+                align: 'center',
+                verticalAlign: 'bottom',
+                format : '<b>{point.key}</b><br>',
+                itemStyle: {
+                    fontSize:'15px',
+                    // font: '20pt Trebuchet MS, Verdana, sans-serif',
+                },
+            },
             credits: {
                 enabled: false
             },
@@ -949,48 +595,95 @@
                 showTable: true,
                 allowHTML: true
             },
+            series: [{
+                name: 'Rumah Tangga',
+                data: [12000000,18000000]
+            }, {
+                name: 'Kurir',
+                data: [9000000,12000000]
+            }, {
+                name: 'Supir',
+                data: [8000000,6000000]
 
+            }]
+        });
+    </script>
+    <!--end::Highchart Column-->
+
+    <!--begin::Highchart Column-->
+    <script>
+        Highcharts.chart('column-chart-2', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'BMN KPPU Per Tahun',
+                style: {
+                    fontWeight: 'bold',
+                    fontSize: '25px'
+                }
+            },
+            subtitle: {
+                // text: 'Source: '
+            },
+            xAxis: {
+                categories: [
+                    '2022'
+                ],
+                crosshair: true,
+                // visible: false,
+            },
+            yAxis: {
+                title: {
+                    useHTML: true,
+                    text: ''
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:15px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>&nbsp;{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.1,
+                    borderWidth: 0,
+                    // borderRadius: 5,
+                    borderRadiusTopLeft: 5,
+                    borderRadiusTopRight: 5,
+                    showInLegend: true
+                }
+            },
             legend: {
                 layout: 'horizontal',
                 align: 'center',
                 verticalAlign: 'bottom',
                 format : '<b>{point.key}</b><br>',
                 itemStyle: {
-                    fontSize:'20px',
+                    fontSize:'15px',
+                    // font: '20pt Trebuchet MS, Verdana, sans-serif',
                 },
             },
-
+            credits: {
+                enabled: false
+            },
+            exporting: {
+                showTable: true,
+                allowHTML: true
+            },
             series: [{
-                name: '2020',
-                data: [11908, 5548, 8105, 11248, 8989, 11816, 28274,
-                    27300, 39053, 42906, 65073, 60940]
+                name: 'Pengadaan BMN',
+                data: [32]
             }, {
-                name: '2021',
-                data: [13934, 22234, 24657, 31827, 42143, 60087,
-                    64878, 65174, 68646, 79546, 88546, 90000]
-            }, {
-                name: '2022',
-                data: [23934, 28656, 35165, 41827, 52143, 62383,
-                    71533, 75174, 95157, 91454, 94610, 100000]
-            }],
+                name: 'Penghapusan BMN',
+                data: [22]
 
-            responsive: {
-                rules: [{
-                    condition: {
-                        maxWidth: 500
-                    },
-                    chartOptions: {
-                        legend: {
-                            layout: 'horizontal',
-                            align: 'center',
-                            verticalAlign: 'bottom'
-                        }
-                    }
-                }]
-            }
-
-            });
+            }]
+        });
     </script>
-    <!--end::Highchart Line-->
+    <!--end::Highchart Column-->
 
 @endsection

@@ -202,7 +202,7 @@
     <!--end::Post-->
 </div>
 
-{{-- begin::modal add user--}}
+ <!-- begin::modal add user-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -236,11 +236,10 @@
     </div>
   </div>
 </form>
-{{-- end::modal add user--}}
+ <!-- end::modal add user-->
 
-{{-- begin::modal edit user--}}
+ <!-- begin::modal edit user-->
 @foreach ($user as $item)
-    
 <div class="modal fade" id="modaledit{{ $item->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -278,9 +277,9 @@
   </div>
 </form>
 @endforeach
-{{-- end::modal edit user --}}
+ <!-- end::modal edit user -->
 
-{{-- begin::modal delete user--}}
+ <!-- begin::modal delete user-->
 @foreach ($user as $item)
 <form action="/account/delete/{{ $item->id }}" method="post">
     @method('delete')
@@ -305,7 +304,7 @@
   </div>
 </form>
 @endforeach
-{{-- end::modal edit user --}}
+ <!-- end::modal edit user -->
 
 @endsection
 
