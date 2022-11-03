@@ -143,9 +143,9 @@
             </div>
             <!--end::Page title-->
             <!--begin::Actions-->
-            {{-- <div class="d-flex align-items-center py-1">
+            <div class="d-flex align-items-center py-1">
                 <!--begin::Wrapper-->
-                <div class="me-4">
+                {{-- <div class="me-4">
                     <!--begin::Menu-->
                     <a href="#"
                         class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
@@ -251,13 +251,21 @@
                     </div>
                     <!--end::Menu 1-->
                     <!--end::Menu-->
-                </div>
+                </div> --}}
                 <!--end::Wrapper-->
+                @php
+                if (!isset($loginSukses)) {
+                    $loginSukses = false;
+                }
+                @endphp
                 <!--begin::Button-->
-                <a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                    data-bs-target="#kt_modal_create_app" id="kt_toolbar_primary_button">Create</a>
+                <form action="/dashboard-login" method="post" class="pe-4" id="kt_sign_in_form" action="#">
+                @csrf
+                <button target="_blank" type="submit" class="btn {{ $loginSukses == false ? 'btn-sm btn-secondary' : 'btn-sm btn-danger' }} btn-active-warning">{{ $loginSukses == false ? 'Login' : 'Logout' }}</button>
+                <a target="_blank" href="https://kppu.go.id/" class="btn btn-sm btn-secondary btn-active-warning"><i class="bi bi-box-arrow-in-up-right"></i>Sunny CRM</a>
+                </form>
                 <!--end::Button-->
-            </div> --}}
+            </div>
             <!--end::Actions-->
         </div>
         <!--end::Container-->

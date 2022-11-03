@@ -16,7 +16,7 @@
                 <!--begin::Card body-->
                 <div class="card-body pt-0">
                     <!--begin::Card widget 20-->
-                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: #009EF7;background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
+                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: #017EB8;background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
                         <!--begin::Header-->
                         <div class="card-header pt-2">
                             <!--begin::Title-->

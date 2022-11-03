@@ -2,10 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Cookie;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
 /*
 |--------------------------------------------------------------------------
@@ -63,8 +65,38 @@ Route::get('/logout', function (Request $request) {
 
 // end :: Login
 
-Route::get('/dashboard', function () {
-    return view('1_dashboard');
+// Route::get('/dashboard-login', function () {
+//     return Redirect::to('https://crm.wika.co.id/dashboard');
+// });
+
+Route::post('/dashboard-login', function (Request $request) {
+    // Redirect::to('localhost:8000/api/login');
+    // dd($request, $UserName, $UserPassword );
+    // $credentials = $request->validate([
+    //     'UserName' => ["required", "email"],
+    //     'UserPassword' => ["required"]
+    // ]);
+    // $token = STR::random(50);
+    // $data = [
+    //     'email' => $UserName,
+    //     'password' => $UserPassword
+    // ];
+    // if (Auth::attempt($data)) {
+    //     $user = auth()->user();
+    //     $token_user = $user->createToken($user->name)->plainTextToken;
+    //     // dd($token_user);
+    //     auth()->user()->forceFill([
+    //         "remember_token" => $token_user,
+    //     ])->save();
+    //     return response()->json([
+    //         "token" => $token_user,
+    //         "user" => $user,
+    //     ])->cookie("BPMCSRF", $token, 60);
+    // }
+    // return Redirect::to('https://crm.wika.co.id/api/login');
+    $loginSukses = true;
+    Alert::success("Success", "Login Berhasil");
+    return view('1_dashboard', compact(["loginSukses"]));
 });
 
 Route::get('/metronic', function () {

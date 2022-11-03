@@ -64,15 +64,15 @@
                                 <!--end::Label-->
                                 <!--begin::Input-->
                                 <div>
-                                    <select class="form-select form-select-solid"
+                                    <select class="form-select form-select-solid" id="status" name="status"
                                         data-kt-select2="true" data-placeholder="Select option"
                                         data-dropdown-parent="#kt_menu_6155ac804a1c2"
                                         data-allow-clear="true">
                                         <option></option>
                                         <option value="1">Approved</option>
                                         <option value="2">Pending</option>
-                                        <option value="2">In Process</option>
-                                        <option value="2">Rejected</option>
+                                        <option value="3">In Process</option>
+                                        <option value="4">Rejected</option>
                                     </select>
                                 </div>
                                 <!--end::Input-->

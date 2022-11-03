@@ -306,6 +306,18 @@
                         <!--end::Options-->
                         <!--begin::Options-->
                         <label class="form-check form-check-sm form-check-custom form-check-solid me-6">
+                            <input class="form-check-input" type="radio" value="['#003A6B', '#1B5886', '#3776A1', '#5293BB', '#6EB1D6', '#89CFF1']" id="chart-color" name="chart-color" {{ $chartColor == "['#003A6B', '#1B5886', '#3776A1', '#5293BB', '#6EB1D6', '#89CFF1']" ? 'checked' : '' }}/>
+                            <span class="form-check-label px-3 py-3"><b>Monochrome :</b></span>
+                            <span class="form-check-label me-0 px-3 py-3" style="background: #009EF7"></span>
+                            <span class="form-check-label me-0 px-3 py-3" style="background: #1B5886"></span>
+                            <span class="form-check-label me-0 px-3 py-3" style="background: #3776A1"></span>
+                            <span class="form-check-label me-0 px-3 py-3" style="background: #5293BB"></span>
+                            <span class="form-check-label me-0 px-3 py-3" style="background: #6EB1D6"></span>
+                            <span class="form-check-label me-4 px-3 py-3" style="background: #89CFF1"></span>
+                        </label>
+                        <!--end::Options-->
+                        <!--begin::Options-->
+                        <label class="form-check form-check-sm form-check-custom form-check-solid me-6">
                             <input class="form-check-input" type="radio" value="" id="chart-color" name="chart-color" {{ $chartColor == "" ? 'checked' : '' }}/>
                             <span class="form-check-label px-3 py-3"><b>Default</b></span>
                         </label>

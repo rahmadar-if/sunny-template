@@ -6,6 +6,7 @@
         // dump(cookie('color'));
     } else {
         $sideColor = "#535353";
+        // $sideColor = "#112444";
     }
 @endphp
 
