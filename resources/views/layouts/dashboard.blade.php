@@ -79,62 +79,62 @@
                         <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold">
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard') ? 'active' : '' }}"
+                                <a class="nav-link text-active-primary pb-4 {{ !str_contains(Request::Path(), 'unit') ? 'active' : '' }}"
                                     href="/dashboard" style="font-size:14px;">Index</a>
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'investigasi') ? 'active' : '' }}"
-                                 href="/sidasi-investigasi" style="font-size:14px;">Investigasi</a> 
+                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard-unit-1') ? 'active' : '' }}"
+                                 href="/dashboard-unit-1" style="font-size:14px;">Unit 1</a> 
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'humas-kerjasama') ? 'active' : '' }}"
-                                    href="/sidasi-humas-kerjasama" style="font-size:14px;">Humas-Kerjasama</a>
+                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard-unit-2') ? 'active' : '' }}"
+                                    href="dashboard-unit-2" style="font-size:14px;">Unit 2</a>
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'kepaniteraan') ? 'active' : '' }}"
-                                 href="/sidasi-kepaniteraan" style="font-size:14px;">Kepaniteraan</a>
+                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard-unit-3') ? 'active' : '' }}"
+                                 href="dashboard-unit-3" style="font-size:14px;">Unit 3</a>
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'biro-hukum') ? 'active' : '' }}"
-                                 href="/sidasi-biro-hukum" style="font-size:14px;">Biro-Hukum</a>
+                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard-unit-4') ? 'active' : '' }}"
+                                 href="dashboard-unit-4" style="font-size:14px;">Unit 4</a>
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'unit-spi') ? 'active' : '' }}"
-                                 href="/sidasi-unit-spi" style="font-size:14px;">Unit-SPI</a>
+                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard-unit-5') ? 'active' : '' }}"
+                                 href="dashboard-unit-5" style="font-size:14px;">Unit 5</a>
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'sdm') ? 'active' : '' }}"
-                                 href="/sidasi-sdm" style="font-size:14px;">SDM</a>
+                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard-unit-6') ? 'active' : '' }}"
+                                 href="dashboard-unit-6" style="font-size:14px;">Unit 6</a>
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'layanan-umum') ? 'active' : '' }}"
-                                 href="/sidasi-layanan-umum" style="font-size:14px;">Layanan-Umum</a>
+                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard-unit-7') ? 'active' : '' }}"
+                                 href="dashboard-unit-7" style="font-size:14px;">Unit 7</a>
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'bagian-umum') ? 'active' : '' }}"
-                                 href="/sidasi-bagian-umum" style="font-size:14px;">Bagian-Umum</a>
+                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard-unit-8') ? 'active' : '' }}"
+                                 href="dashboard-unit-8" style="font-size:14px;">Unit 8</a>
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                             <!--begin:::Tab Item Tab Pane-->
                             <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'tata-usaha') ? 'active' : '' }}"
-                                 href="/sidasi-tata-usaha" style="font-size:14px;">Tata-Usaha</a>
+                                <a class="nav-link text-active-primary pb-4 {{ str_contains(Request::Path(), 'dashboard-unit-9') ? 'active' : '' }}"
+                                 href="dashboard-unit-9" style="font-size:14px;">Unit 9</a>
                             </li>
                             <!--end:::Tab Item Tab Pane-->
                         </ul>
@@ -253,18 +253,6 @@
                     <!--end::Menu-->
                 </div> --}}
                 <!--end::Wrapper-->
-                @php
-                if (!isset($loginSukses)) {
-                    $loginSukses = false;
-                }
-                @endphp
-                <!--begin::Button-->
-                <form action="/dashboard-login" method="post" class="pe-4" id="kt_sign_in_form" action="#">
-                @csrf
-                <button target="_blank" type="submit" class="btn {{ $loginSukses == false ? 'btn-sm btn-secondary' : 'btn-sm btn-danger' }} btn-active-warning">{{ $loginSukses == false ? 'Login' : 'Logout' }}</button>
-                <a target="_blank" href="https://kppu.go.id/" class="btn btn-sm btn-secondary btn-active-warning"><i class="bi bi-box-arrow-in-up-right"></i>Sunny CRM</a>
-                </form>
-                <!--end::Button-->
             </div>
             <!--end::Actions-->
         </div>
