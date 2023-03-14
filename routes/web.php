@@ -111,7 +111,7 @@ Route::group(['middleware' => ["auth"]], function () {
     });
 
     Route::get('/metronic', function () {
-        return view('dashboard');
+        return view('dashboardMetronic');
     });
 
     Route::get('/dashboard', function () {
@@ -155,23 +155,39 @@ Route::group(['middleware' => ["auth"]], function () {
     });
 
     Route::get('/setting', function () {
-        $cookie = Cookie::get('color');
+        $default = Cookie::get('default');
+        $color = Cookie::get('color');
         $active = Cookie::get('active');
         $chartColor = Cookie::get('chart');
         // $chartColor = ["#017EB8", "#28B3AC", "#F7AD1A", "#9FE7F5", "#E86340", "#063F5C"];
-        // dd($cookie, $active);
-        return view('9_setting', compact(['cookie', 'active', 'chartColor']) );
+        // dd($color, $active);
+        return view('9_setting', compact(['color', 'active', 'chartColor', 'default']));
     });
 
     Route::post('/setting/cookie', function (Request $request) {
         // $response = new Response('Cookie');
         // $response->withCookie(cookie('color', $request["aside-color"]);
-        $cookie = cookie()->forever('color', $request["aside-color"]);
-        $active = cookie()->forever('active', $request["active-color"]);
-        $chartColor = cookie()->forever('chart', $request["chart-color"]);
+        // dd($request["chart-color"]);
+        // $data = $request->all();
+        // dd($data);
+
+        if (empty($request["default"])) {
+            $color = cookie()->forever('color', $request["aside-color"]);
+            $active = cookie()->forever('active', $request["active-color"]);
+            $chartColor = cookie()->forever('chart', $request["chart-color"]);
+            $default = cookie()->forever('default', '');
+        } else {
+            $color = cookie()->forever('color', '#0F2846');
+            // $color = cookie()->forever('color', '#535353');
+            $active = cookie()->forever('active', "#F39A06");
+            // $active = cookie()->forever('active', "#ffa800");
+            $chartColor = cookie()->forever('chart', '');
+            $default = cookie()->forever('default', 'true');
+        }
+
         //  dd($request);
-        //  dd($cookie, $active, $chartColor, $request->get('chart-color'));
-        return redirect()->back()->withCookies([$cookie, $active, $chartColor]) ;
+        //  dd($color, $active, $chartColor, $request->get('chart-color'));
+        return redirect()->back()->withCookies([$default, $color, $active, $chartColor]) ;
     });
 // End :: Group Route
 });

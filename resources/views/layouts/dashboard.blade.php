@@ -56,8 +56,11 @@
     font-size: 1.1em;
     font-weight: bold;
     }
-
 </style>
+
+@php
+    $chart = Illuminate\Support\Facades\Cookie::get('chart');
+@endphp
 
 @section('container')
 
@@ -273,13 +276,15 @@
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
 <script src="https://rawgit.com/highcharts/rounded-corners/master/rounded-corners.js"></script>
 <script>
+    let chart = {!! $chart !!};
     Highcharts.setOptions({
         chart: {
             style: {
                 fontFamily: 'Poppins'
             }
         },
-        colors: ["#017EB8", "#28B3AC", "#F7AD1A", "#9FE7F5", "#E86340", "#063F5C"],
+        colors: chart,
+        // colors: ["#017EB8", "#28B3AC", "#F7AD1A", "#9FE7F5", "#E86340", "#063F5C"],
         // colors: ["#239DB5", "#71B383", "#EE8E52", "#EBC44F", "#8D5690", "#E85170",  "#4282A6"],
         // colors: ["#009EF7", "#50CD89", "#F1416C", "#FFC700", "#7239EA", "#43CED7", "#FA8B28"],
     });

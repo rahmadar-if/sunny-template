@@ -28,7 +28,7 @@
             <!--begin::Actions-->
             <div class="d-flex align-items-center py-1">
                 <!--begin::Wrapper-->
-                {{-- <div class="me-4">
+                <div class="me-4">
                     <!--begin::Menu-->
                     <a href="#"
                         class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
@@ -134,7 +134,7 @@
                     </div>
                     <!--end::Menu 1-->
                     <!--end::Menu-->
-                </div> --}}
+                </div>
                 <!--end::Wrapper-->
                 <!--begin::Button-->
                 @if (auth()->user()->Role->is_supervisor)

@@ -2,6 +2,15 @@
 
 @section('dashboard')
 
+@php
+    $chart = Illuminate\Support\Facades\Cookie::get('chart');
+    if ($chart == '') {
+        $chart = ['#7CB5EC', '#434348', '#90ED7D', '#F7A35C', '#8085E9'];
+    } else {
+        $chart = explode(',', preg_replace("/['|[|]| |]/", "",$chart));
+    }
+@endphp
+
     <!--begin::Body Dashboard-->
     <div id="dashboard-body" class="mt-3">
 
@@ -12,7 +21,7 @@
                 <!--begin::Card body-->
                 <div class="card-body pt-0">
                     <!--begin::Card widget 20-->
-                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: #017EB8;background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
+                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: {{ $chart[0] }};background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
                         <!--begin::Header-->
                         <div class="card-header pt-5">
                             <!--begin::Title-->
@@ -52,7 +61,7 @@
                 <!--begin::Card body-->
                 <div class="card-body pt-0">
                     <!--begin::Card widget 20-->
-                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: #28B3AC;background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
+                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: {{ $chart[1] }};background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
                         <!--begin::Header-->
                         <div class="card-header pt-5">
                             <!--begin::Title-->
@@ -92,7 +101,7 @@
                 <!--begin::Card body-->
                 <div class="card-body pt-0">
                     <!--begin::Card widget 20-->
-                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: #F7AD1A;background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
+                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: {{ $chart[2] }};background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
                         <!--begin::Header-->
                         <div class="card-header pt-5">
                             <!--begin::Title-->
@@ -132,7 +141,7 @@
                 <!--begin::Card body-->
                 <div class="card-body pt-0">
                     <!--begin::Card widget 20-->
-                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: #E86340;background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
+                    <div class="card card-flush bgi-no-repeat bgi-size-contain bgi-position-x-end h-md-90 mb-5 mb-xl-10" style="background-color: {{ $chart[3] }};background-image:url('/assets/media/patterns/vector-1.png');background-repeat: no-repeat;background-size: auto;">
                         <!--begin::Header-->
                         <div class="card-header pt-5">
                             <!--begin::Title-->

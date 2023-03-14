@@ -1,18 +1,20 @@
 
 @php
-    if (isset($cookie) && isset($active)) {
-        $sideColor = $cookie;
-        $activeColor = $active;
-        // dump(cookie('color'));
-    } else {
-        $sideColor = "#535353";
-    }
+    $sideColor = Illuminate\Support\Facades\Cookie::get('color');
+    $activeColor = Illuminate\Support\Facades\Cookie::get('active');
+    $activePage = 'style="background-color:' . $activeColor . '"';
 @endphp
 
+<style>
+    .aside-dark .menu .menu-item .menu-link:hover:not(.disabled):not(.active){
+        background-color: {{ $activeColor }} ;
+    }
+</style>
+
 <!--begin::Aside-->
-<div style="background-color: {{$sideColor}}" id="kt_aside" class="aside aside-dark"   data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
+<div style="background-color: {{$sideColor}}; background: linear-gradient(90deg, {{$sideColor}} 60%, #dfdfdf 200%);" id="kt_aside" class="aside aside-dark"   data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
     <!--begin::Brand-->
-    <div style="background-color: {{$sideColor}}" class="aside-logo flex-column-auto pt-6" id="kt_aside_logo">
+    <div style="background-color: {{$sideColor}}; background: linear-gradient(90deg, {{$sideColor}} 60%, #dfdfdf 200%);" class="aside-logo flex-column-auto pt-6" id="kt_aside_logo">
         <!--begin::Logo-->
         <a href="/dashboard">
             <img alt="Logo" src="/assets/media/logos/logo.png" class="h-45px logo" />
@@ -45,8 +47,9 @@
                     </div>
                 </div>
                 <!--begin:Menu item-->
+                {{-- @dump($activeColor) --}}
                 <div class="menu-item">
-                    <a class="menu-link {{ str_contains(Request::Path(), 'dashboard') ? 'active' : '' }} {{ str_contains(Request::Path(), 'sidasi') ? 'active' : '' }}" href="/dashboard">
+                    <a class="menu-link" {!! str_contains(Request::Path(), 'dashboard') ? $activePage : '' !!}  href="/dashboard">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon-2">
@@ -59,16 +62,16 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span style="font-size: 16px" class="menu-title">Dashboard</span>
+                        <span style="font-size: 16px" class="menu-title text-white">Dashboard</span>
                     </a>
                 </div>
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     @if (!auth()->user()->Role->is_user)
-                    <a class="menu-link {{ str_contains(Request::Path(), 'account') ? 'active' : '' }}" href="/account">
+                    <a class="menu-link" {!! str_contains(Request::Path(), 'account') ? $activePage : '' !!} href="/account">
                     @else
-                    <a class="menu-link {{ str_contains(Request::Path(), 'account') ? 'active' : '' }}" href="/account/view/{{ auth()->user()->uuid }}">
+                    <a class="menu-link" {!! str_contains(Request::Path(), 'account') ? $activePage : '' !!} href="/account/view/{{ auth()->user()->uuid }}">
                     @endif
                         <span class="menu-icon" style="font-size: 16px">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
@@ -80,7 +83,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span  style="font-size: 16px" class="menu-title">Account</span>
+                        <span  style="font-size: 16px" class="menu-title text-white">Account</span>
                     </a>
                 </div>
                 <!--end:Menu item-->
@@ -102,7 +105,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Collapse Field</span>
+                        <span class="menu-title text-white">Collapse Field</span>
                     </a>
                 </div>
                 <!--end:Menu item-->
@@ -116,7 +119,7 @@
                                 <i class="bi bi-box-arrow-up-right"></i>
                                 <!--end::Svg Icon-->
                             </span>
-                            <span class="menu-title ps-4">Google.com</span>
+                            <span class="menu-title text-white ps-4">Google.com</span>
                         </a>
                     </div>
                     <!--end:Item Collapse-->
@@ -128,7 +131,7 @@
                                 <i class="bi bi-box-arrow-up-right"></i>
                                 <!--end::Svg Icon-->
                             </span>
-                            <span class="menu-title ps-4">Wikipedia</span>
+                            <span class="menu-title text-white ps-4">Wikipedia</span>
                         </a>
                     </div>
                     <!--end:Item Collapse-->
@@ -147,14 +150,14 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">User Management</span>
+                        <span class="menu-title text-white">User Management</span>
                     </a>
                 </div> --}}
                 <!--end:Menu item-->
                 <!--begin:Menu item-->
                 <div class="menu-item">
                     <!--begin:Menu link-->
-                    <a class="menu-link {{ str_contains(Request::Path(), 'setting') ? 'active' : '' }}" style="background-color:{{ $activeColor ?? ""}}"  href="/setting">
+                    <a class="menu-link" {!! str_contains(Request::Path(), 'setting') ? $activePage : '' !!}   href="/setting">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/abstract/abs014.svg-->
                             <span class="svg-icon-2">
@@ -165,7 +168,7 @@
                             </span>
                             <!--end::Svg Icon-->
                         </span>
-                        <span class="menu-title">Layout Builder</span>
+                        <span class="menu-title text-white">Layout Builder</span>
                     </a>
                     <!--end:Menu link-->
                 </div>

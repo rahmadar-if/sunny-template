@@ -218,8 +218,8 @@
         </div>
         <!--end::Toolbar-->
         @php
-            if (isset($cookie) && isset($active)) {
-                $sideColor = $cookie;
+            if (isset($color) && isset($active)) {
+                $sideColor = $color;
                 $activeColor = $active;
             } else {
                 $sideColor = "#535353";
@@ -316,12 +316,12 @@
                             <span class="form-check-label me-4 px-3 py-3" style="background: #89CFF1"></span>
                         </label>
                         <!--end::Options-->
-                        <!--begin::Options-->
+                        {{-- <!--begin::Options-->
                         <label class="form-check form-check-sm form-check-custom form-check-solid me-6">
                             <input class="form-check-input" type="radio" value="" id="chart-color" name="chart-color" {{ $chartColor == "" ? 'checked' : '' }}/>
                             <span class="form-check-label px-3 py-3"><b>Default</b></span>
                         </label>
-                        <!--end::Options-->
+                        <!--end::Options--> --}}
                     </div>
                     <br>
                     <br>
@@ -339,6 +339,17 @@
                         <input class="form-control mt-3 col-6" type="color" id="active-color" name="active-color" value="{{ $activeColor ?? "#FFA800" }}">
                     </div>
                     <br>
+                    <!--begin::Options-->
+                    <div class="row">
+                        {{-- <h1>Active Page</h1>
+                        <input class="form-control mt-3 col-6" type="color" id="active-color" name="active-color" value="{{ $activeColor ?? "#FFA800" }}"> --}}
+                        <label class="form-check form-check-sm form-check-custom form-check-solid ms-2 me-4">
+                            <input class="form-check-input" type="checkbox" value="true" id="default" name="default" {{ $default == "true" ? 'checked' : '' }}/>
+                            <span class="form-check-label px-3 py-3"><b>Default</b></span>
+                        </label>
+                    </div>
+                    <br>
+                    <!--end::Options-->
                     <div>
                         <button type="submit" class="btn btn-primary btn-sm">Save</button>
                     </div>
